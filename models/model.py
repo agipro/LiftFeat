@@ -14,7 +14,11 @@ import math
 import cv2
 
 import sys
-sys.path.append('/home/yepeng_liu/code_python/laiwenpeng/LiftFeat')
+from pathlib import Path
+parent_dir = str(Path(__file__).resolve().parent.parent)
+if parent_dir not in sys.path:
+    sys.path.append(parent_dir)
+
 from utils.featurebooster import FeatureBooster
 from utils.config import featureboost_config
 

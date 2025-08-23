@@ -5,6 +5,11 @@ import numpy as np
 import math
 import cv2
 
+from pathlib import Path
+parent_dir = str(Path(__file__).resolve().parent.parent)
+if parent_dir not in sys.path:
+    sys.path.append(parent_dir)
+
 from models.model import LiftFeatSPModel
 from models.interpolator import InterpolateSparse2d
 from utils.config import featureboost_config
