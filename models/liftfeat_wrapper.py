@@ -16,8 +16,6 @@ from utils.config import featureboost_config
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "../weights/LiftFeat.pth")
-
 
 class NonMaxSuppression(torch.nn.Module):
     def __init__(self, rep_thr=0.1, top_k=4096):

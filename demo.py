@@ -5,7 +5,7 @@ import numpy as np
 import math
 import cv2
 
-from models.liftfeat_wrapper import LiftFeat,MODEL_PATH
+from models.liftfeat_wrapper import LiftFeat
 
 import argparse
 
@@ -84,6 +84,8 @@ if __name__=="__main__":
     else:
         print(f'Use original match function')
     
+    MODEL_PATH = os.path.join(os.path.dirname(__file__), "../weights/LiftFeat.pth")
+
     liftfeat=LiftFeat(weight=MODEL_PATH,detect_threshold=0.05)
     
     img1=cv2.imread(args.img1)
