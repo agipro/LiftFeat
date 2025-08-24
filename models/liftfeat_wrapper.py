@@ -78,7 +78,7 @@ import torch.nn as nn
 
 
 class LiftFeat(nn.Module):
-    def __init__(self, weight=MODEL_PATH, top_k=4096, detect_threshold=0.1):
+    def __init__(self, weight="", top_k=4096, detect_threshold=0.1):
         super().__init__()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.net = LiftFeatSPModel(featureboost_config).to(self.device).eval()
